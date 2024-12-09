@@ -8,7 +8,7 @@ use Getopt::Long;
 my $blast    = "~/bin/blast/bin/blastall";
 my $formatdb = "~/bin/blast/bin/formatdb";
 ##diamond https://github.com/bbuchfink/diamond/releases
-my $diamond = "C:/Users/alex_hoke1.BAYLOR/Desktop/NcycDB/diamond-2.1.10";
+my $diamond = "C:/Users/alex_hoke1.BAYLOR/Desktop/NcycDB/diamond-linux64.tar.qz";
 ##usearch https://www.drive5.com/usearch/download.html
 my $usearch = "~/bin/usearch8.1.1861_i86linux32";
 
