@@ -46,9 +46,9 @@ if ( $method eq "diamond" ) {
   foreach my $file (@files) {
     my $out = $file;
     $out =~ s/$filetype/diamond/;
-    system("$diamond blastx -k 1 -e 0.0001 -p 5 -d /NCyc_100 -q $file -o $out")
+    system("$diamond blastx -k 1 -e 0.0001 -p 5 -d C:/Users/alex_hoke1.BAYLOR/Desktop/NcycDB/NCyc_100 -q $file -o $out")
       if $seqtype eq "nucl";
-    system("$diamond blastp -k 1 -e 0.0001 -p 5 -d /NCyc_100 -q $file -o $out")
+    system("$diamond blastp -k 1 -e 0.0001 -p 5 -d C:/Users/alex_hoke1.BAYLOR/Desktop/NcycDB/NCyc_100 -q $file -o $out")
       if $seqtype eq "prot";
     system("cp $out ./");
   }
@@ -76,9 +76,9 @@ elsif ( $method eq "blast" ) {
   foreach my $file (@files) {
     my $out = $file;
     $out =~ s/$filetype/blast/;
-    system("blastall -p blastp -d /NCyc_100.faa -i $file -o $out -m 8 -e 1e-4 -b 1 -v 1")
+    system("blastall -p blastp -d C:/Users/alex_hoke1.BAYLOR/Desktop/NcycDB/NCyc_100.faa -i $file -o $out -m 8 -e 1e-4 -b 1 -v 1")
       if $seqtype eq "prot";
-    system("blastall -p blastx -d /NCyc_100.faa -i $file -o $out -m 8 -e 1e-4 -b 1 -v 1")
+    system("blastall -p blastx -d C:/Users/alex_hoke1.BAYLOR/Desktop/NcycDB/NCyc_100.faa -i $file -o $out -m 8 -e 1e-4 -b 1 -v 1")
       if $seqtype eq "nucl";
     system("cp $out ./");
   }
