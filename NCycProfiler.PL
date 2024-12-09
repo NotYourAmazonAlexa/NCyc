@@ -41,7 +41,7 @@ my (@files);
 if ( $method eq "diamond" ) {
   die "Please specify the location of diamond!" if !-e $diamond;
   @files = glob("$workdir/*$filetype");
-  my $diamond_db = "$diamond makedb --in /NCyc_100.faa --db /NCyc_100";
+  my $diamond_db = "$diamond makedb --in C:/Users/alex_hoke1.BAYLOR/Desktop/NcycDB/NCyc_100.faa --db C:/Users/alex_hoke1.BAYLOR/Desktop/NcycDB/NCyc_100";
   system("$diamond_db");
   foreach my $file (@files) {
     my $out = $file;
@@ -62,7 +62,7 @@ elsif ( $method eq "usearch" ) {
   foreach my $file (@files) {
     my $out = $file;
     $out =~ s/$filetype/usearch/;
-    system("$usearch -usearch_global $file -db /NCyc_100.faa -id 0.3 -blast6out $out");
+    system("$usearch -usearch_global $file -db C:/Users/alex_hoke1.BAYLOR/Desktop/NcycDB/NCyc_100.faa -id 0.3 -blast6out $out");
     system("cp $out ./");
   }
 }
@@ -72,7 +72,7 @@ elsif ( $method eq "blast" ) {
     die "Only fasta files are supported by blast program!";
   }
   @files = glob("$workdir/*$filetype");
-  system("$formatdb -i /NCyc_100.faa -p T");
+  system("$formatdb -i C:/Users/alex_hoke1.BAYLOR/Desktop/NcycDB/NCyc_100.faa -p T");
   foreach my $file (@files) {
     my $out = $file;
     $out =~ s/$filetype/blast/;
